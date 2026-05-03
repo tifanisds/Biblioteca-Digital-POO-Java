@@ -143,16 +143,10 @@ public class CLIService {
 
         ItemAcervo item = acervoService.obterItemPeloTitulo(titulo);
 
-        if (!item.isDisponivel()) {
-            throw new ItemNaoDisponivelException(String.format("O item %s não está disponível", item.getTitulo()));
-        } else {
-            acervoService.abrirItem(item);
+        acervoService.abrirItem(item);
 
-            String sair = receberValor("Digite 1 para finalizar leitura: ");
-            if(sair.equals("1")) {
-                acervoService.fecharItem(item);
-            }
-        }
+        receberValor("Digite qualquer valor para finalizar leitura: ");
+        acervoService.fecharItem(item);
     }
 
     public String receberValor(String mensagem) {
