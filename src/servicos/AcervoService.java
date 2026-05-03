@@ -20,28 +20,6 @@ public class AcervoService {
         itensAcervo.add(item);
     }
 
-    public void removerItem(ItemAcervo item) throws ItemNaoEncontradoException {
-        if(!itensAcervo.contains(item)) {
-            throw new ItemNaoEncontradoException(
-                    String.format("O item: %s não foi encontrado", item.getTitulo())
-            );
-        }
-
-        itensAcervo.remove(item);
-    }
-
-    public ItemAcervo buscarItemPeloNome(String nome) throws ItemNaoEncontradoException {
-        for(ItemAcervo itemAcervo : itensAcervo) {
-            if(nome.equals(itemAcervo.getTitulo())) {
-                return itemAcervo;
-            }
-        }
-
-        throw new ItemNaoEncontradoException(
-                String.format("O item: %s não foi encontrado", nome)
-        );
-    }
-
     public void abrirItem(ItemAcervo item) throws ItemNaoDisponivelException {
         if(!item.isDisponivel()) {
             throw new ItemNaoDisponivelException(
