@@ -9,6 +9,7 @@ public abstract class ItemAcervo implements Acessavel {
 
     @Override
     public void abrirItem() {
+        System.out.println("Leitura iniciada.");
         System.out.println(String.format("Título: %s", titulo));
         System.out.println(String.format("Autor: %s", autor));
     }
