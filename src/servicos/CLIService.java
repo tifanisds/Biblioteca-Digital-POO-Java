@@ -92,9 +92,10 @@ public class CLIService {
         System.out.println("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+");
         String titulo = receberValor("Digite o título: ");
         String autor = receberValor("Digite o nome do autor: ");
+        String conteudo = receberValor("Digite o conteúdo do item: ");
         String tamanhoArquivoMB = receberValor("Digite o peso em MB: ");
 
-        acervoService.cadastrarEbook(new Ebook(titulo, autor, tamanhoArquivoMB));
+        acervoService.cadastrarEbook(new Ebook(titulo, autor, conteudo, tamanhoArquivoMB));
 
         System.out.println("Ebook cadastrado com sucesso!");
     }
@@ -103,9 +104,10 @@ public class CLIService {
         System.out.println("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+");
         String titulo = receberValor("Digite o título: ");
         String autor = receberValor("Digite o nome do autor: ");
+        String conteudo = receberValor("Digite o conteúdo do item: ");
         String numeroEdicao = receberValor("Digite o número da edição: ");
 
-        acervoService.cadastrarRevistaDigital(new RevistaDigital(titulo, autor, numeroEdicao));
+        acervoService.cadastrarRevistaDigital(new RevistaDigital(titulo, autor, conteudo, numeroEdicao));
 
         System.out.println("Ebook cadastrado com sucesso!");
     }
