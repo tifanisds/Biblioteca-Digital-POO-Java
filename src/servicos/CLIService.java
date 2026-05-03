@@ -68,7 +68,7 @@ public class CLIService {
     public void exibirMenuCadastro() {
         System.out.println("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+");
         System.out.println("Digite 1 para cadastrar um Ebook");
-        System.out.println("Digite 2 para cadastrar uma resvista digital");
+        System.out.println("Digite 2 para cadastrar uma revista digital");
         System.out.println("Digite 3 para sair");
     }
 
@@ -93,9 +93,13 @@ public class CLIService {
         String titulo = receberValor("Digite o título: ");
         String autor = receberValor("Digite o nome do autor: ");
         String conteudo = receberValor("Digite o conteúdo do item: ");
+        String disponivel = receberValor("Digite S para disponível e outra letra para indisponível: ");
         String tamanhoArquivoMB = receberValor("Digite o peso em MB: ");
 
-        acervoService.cadastrarEbook(new Ebook(titulo, autor, conteudo, tamanhoArquivoMB));
+        Ebook ebook = new Ebook(titulo, autor, conteudo, tamanhoArquivoMB);
+        ebook.setDisponivel(disponivel.equalsIgnoreCase("S"));
+
+        acervoService.cadastrarEbook(ebook);
 
         System.out.println("Ebook cadastrado com sucesso!");
     }
@@ -105,9 +109,13 @@ public class CLIService {
         String titulo = receberValor("Digite o título: ");
         String autor = receberValor("Digite o nome do autor: ");
         String conteudo = receberValor("Digite o conteúdo do item: ");
+        String disponivel = receberValor("Digite S para disponível e outra letra para indisponível: ");
         String numeroEdicao = receberValor("Digite o número da edição: ");
 
-        acervoService.cadastrarRevistaDigital(new RevistaDigital(titulo, autor, conteudo, numeroEdicao));
+        RevistaDigital revistaDigital = new RevistaDigital(titulo, autor, conteudo, numeroEdicao);
+        revistaDigital.setDisponivel(disponivel.equalsIgnoreCase("S"));
+
+        acervoService.cadastrarRevistaDigital(revistaDigital);
 
         System.out.println("Ebook cadastrado com sucesso!");
     }
