@@ -265,7 +265,7 @@ void fecharItem();
 Define que qualquer classe que implemente essa interface deve possuir esses métodos.
 
 
-## Explicando as Exceções
+## 4. Explicando as Exceções
 
 As exceções são utilizadas para tratar erros e situações inesperadas no sistema.
 
@@ -295,3 +295,60 @@ Usada quando o usuário digita uma opção inválida no menu.
 
 ### SistemaFinalizadoException
 Utilizada para encerrar o sistema de forma controlada.
+
+
+## 5. Explicando os Serviços
+
+Os serviços são responsáveis por implementar as regras de negócio do sistema.
+
+### AcervoService
+Responsável por gerenciar os itens do acervo.
+
+```java
+private List<ItemAcervo> itensAcervo = new ArrayList<>();
+```
+
+Principais métodos:
+- **inserirItem()** → adiciona item
+- **obterTodosItensDoAcervo()** → retorna lista
+- **obterItemPeloTitulo()** → busca item
+- **removerItemPeloTitulo()** → remove item
+
+
+Regra importante:
+```java
+public void abrirItem(ItemAcervo item) throws ItemNaoDisponivelException
+```
+
+- Verifica se o item está disponível
+- Caso não esteja, lança exceção
+
+
+### CLIService
+Responsável pela interação com o usuário.
+
+#### Funções principais:
+- Exibir menus
+- Receber entradas do usuário
+- Chamar o AcervoService
+
+#### Estrutura de navegação:
+```java
+switch (opcaoSelecionada)
+```
+
+Controla as ações do sistema:
+
+- Listar acervo
+- Cadastrar item
+- Remover item
+- Abrir item
+- Sair
+
+#### Validação:
+
+```java
+if(!operacoesDisponiveis.contains(opcaoSelecionada))
+```
+
+Garante que o usuário digitou uma opção válida.
