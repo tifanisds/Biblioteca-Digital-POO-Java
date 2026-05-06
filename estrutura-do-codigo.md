@@ -172,3 +172,76 @@ public abstract class ItemAcervo implements Acessavel {
     private String conteudo;
 }
 ```
+
+## 2. Explicando as entidades
+
+As entidades do sistema representam os elementos principais da biblioteca digital, ou seja, os itens que podem ser cadastrados e manipulados.
+
+
+### Classe Abstrata: ItemAcervo
+
+A classe ItemAcervo é uma classe abstrata, responsável por definir a estrutura base de todos os itens do acervo.
+
+<img src="./Assets/img/image3.png" width="900">
+
+Principais características:
+- Implementa o contrato Acessavel
+- Não pode ser instanciada diretamente
+- Serve como base para outras classes
+
+Atributos:
+
+- titulo → nome do item
+- autor → autor do conteúdo
+- disponivel → indica se pode ser acessado
+- conteudo → conteúdo do item
+
+Métodos principais:
+
+
+**public void abrirItem()**
+- Exibe as informações do item
+- Simula a leitura do conteúdo
+
+**public void fecharItem()**
+- Indica que o item foi fechado
+
+
+### Classe Ebook
+A classe Ebook é uma subclasse de ItemAcervo, representando um tipo específico de item.
+
+```java
+public class Ebook extends ItemAcervo
+```
+
+**Características:**
+- Herda todos os atributos e métodos da classe abstrata
+- Possui um atributo próprio:
+
+```java
+private String tamanhoArquivoMB;
+```
+
+**Construtor:**
+
+```java
+public Ebook(String titulo, String autor, String conteudo, String tamanhoArquivoMB)
+```
+
+- Utiliza os métodos set da superclasse para definir os atributos
+- Inicializa o tamanho do arquivo
+
+### Classe RevistaDigital
+A classe RevistaDigital também herda de ItemAcervo.
+
+```java
+public class RevistaDigital extends ItemAcervo
+```
+
+**Atributo específico:**
+```java
+private String numeroEdicao;
+```
+
+**Função:**
+Representa revistas digitais com controle de edição.
