@@ -265,3 +265,33 @@ void fecharItem();
 Define que qualquer classe que implemente essa interface deve possuir esses métodos.
 
 
+## Explicando as Exceções
+
+As exceções são utilizadas para tratar erros e situações inesperadas no sistema.
+
+Todas as exceções criadas herdam de:
+
+`Exception`
+
+### ItemNaoDisponivelException
+
+Usada quando o item não pode ser acessado:
+
+```java
+if(!item.isDisponivel()) {
+    throw new ItemNaoDisponivelException(...)
+}
+```
+
+### ItemNaoEncontradoException
+Utilizada quando um item não é encontrado no acervo:
+
+```java
+throw new ItemNaoEncontradoException(...)
+```
+
+### OperacaoInvalidaException
+Usada quando o usuário digita uma opção inválida no menu.
+
+### SistemaFinalizadoException
+Utilizada para encerrar o sistema de forma controlada.
