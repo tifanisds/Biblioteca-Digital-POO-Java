@@ -81,7 +81,46 @@ Atua como intermediário entre:
 
 Essa separação melhora a organização e evita concentração de responsabilidades em uma única classe.
 
-<img src="./assets/img/image1.png" width="700">
+<img src="./Assets/img/image1.png" width="700">
 
 
+## 1.5 O que é uma Exceção
+Uma exceção é um
+mecanismo utilizado para tratar erros ou situações inesperadas durante a execução do programa.
 
+
+Ela funciona como um aviso de erro, interrompendo o fluxo normal da aplicação quando algo incorreto acontece.
+
+
+### 1.5.1 Hierarquia das Exceções em Java
+
+Todas as exceções derivam da classe principal:
+
+<img src="./Assets/img/image2.jpg" width="700">
+
+Exemplo de uso utilizados no projeto
+
+#### Try/Catch:
+
+```java
+public class ExemploTryCatch {
+    public static void main(String[] args) {
+
+        try {
+            int resultado = 10 / 0; // erro
+            System.out.println(resultado);
+
+        } catch (ArithmeticException e) {
+            System.out.println("Erro: divisão por zero");
+        }
+
+        System.out.println("Programa continua normalmente");
+    }
+}
+```
+
+#### throw new Exception
+
+```java
+throw new Error("Algo deu errado");
+```
