@@ -352,3 +352,40 @@ if(!operacoesDisponiveis.contains(opcaoSelecionada))
 ```
 
 Garante que o usuário digitou uma opção válida.
+
+## 6. Funcionamento do Main
+
+A classe Main é responsável por iniciar e controlar a execução do sistema.
+
+### Estrutura principal:
+```java
+while (sistemaExecutando)
+```
+Mantém o sistema em execução contínua.
+
+
+### Fluxo:
+- 1. Exibe o menu
+- 2. Aguarda entrada do usuário
+- 3. Executa a ação correspondente
+
+
+### Tratamento de exceções:
+```java
+try {
+    cliService.navegar();
+}
+```
+
+Captura erros:
+- Operação inválida
+- Item não encontrado
+- Item indisponível
+
+### Encerramento do sistema:
+```java
+catch (SistemaFinalizadoException e)
+```
+
+- Exibe mensagem
+- Finaliza o loop
