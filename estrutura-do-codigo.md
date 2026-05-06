@@ -245,3 +245,23 @@ private String numeroEdicao;
 
 **Função:**
 Representa revistas digitais com controle de edição.
+
+
+## 3. Explicando o Contrato
+
+O contrato do sistema é representado pela interface:
+
+```java
+public interface Acessavel
+```
+
+**Métodos definidos:**
+```java
+void abrirItem();
+void fecharItem();
+```
+
+**Função:**
+Define que qualquer classe que implemente essa interface deve possuir esses métodos.
+
+
