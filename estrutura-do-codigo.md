@@ -124,3 +124,51 @@ public class ExemploTryCatch {
 ```java
 throw new Error("Algo deu errado");
 ```
+
+## O que é uma Entidade
+Uma entidade é uma classe que representa um elemento do mundo real dentro do sistema.
+
+
+Ela possui:
+
+- **Atributos (dados)**
+- **Identidade própria** (única no sistema)
+
+No contexto do projeto, as entidades representam os itens do acervo, como:
+
+- Ebook
+- RevistaDigital
+- ItemAcervo (Classe abstrata)
+
+Essas classes armazenam informações e podem conter comportamentos relacionados ao domínio da aplicação.
+
+### 1.6.1 Diferença entre Classe Abstrata e Classe Normal
+#### Classe Normal (Concreta)
+
+
+Uma classe normal é uma classe que pode ser instanciada diretamente, ou seja, é possível criar objetos a partir dela.
+
+Ela representa uma estrutura completa, já pronta para uso no sistema.
+
+Exemplo:
+
+```java
+public class RevistaDigital extends ItemAcervo {
+    private String numeroEdicao;
+}
+```
+
+#### Classe Abstrata
+Uma classe abstrata é uma classe que não pode ser instanciada diretamente.
+
+Ela é utilizada como uma base (modelo) para outras classes, definindo atributos e comportamentos que deverão ser herdados.
+
+
+```java
+public abstract class ItemAcervo implements Acessavel {
+    private String titulo;
+    private String autor;
+    private boolean disponivel = true;
+    private String conteudo;
+}
+```
